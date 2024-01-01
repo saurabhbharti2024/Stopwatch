@@ -1,0 +1,145 @@
+/* Main container styling */
+.main_container {
+    height: 100vh;
+    width: 100vw;
+    background-color: rgb(194, 225, 122);
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+/* Tagline styling */
+.tag {
+    font-size: 2rem;
+    color: rgb(53, 40, 40);
+    margin-top: 40px;
+}
+
+/* Container styling for the stopwatch */
+.container {
+    height: 50vh;
+    width: 40vw;
+    min-height: 250px;
+    min-width: 500px;
+    background-color: rgb(53, 40, 40);
+    border: 4px solid rgb(221, 15, 15);
+    border-radius: 30px;
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+}
+
+/* Timer section styling */
+.timer {
+    height: 35%;
+    width: 80%;
+    background-color: rgb(242, 244, 238);
+    border: 2px solid black;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Timer text styling */
+.tTex {
+    font-size: 300%;
+    color: black;
+    padding: auto;
+}
+
+/* Button section styling */
+.button {
+    height: 15%;
+    width: 65%;
+    display: flex;
+    justify-content: space-around;
+    margin-top: -75px;
+}
+
+
+/* General button styling */
+.btn {
+    font-size: 1rem;
+    font-weight: bold;
+}
+
+/* Start button styling */
+#start_button {
+    border: 1px solid rgb(27, 221, 27);
+    width: 75px;
+    border-radius: 10px;
+    color: rgb(27, 221, 27);
+}
+
+#start_button:hover {
+    background-color: rgb(27, 221, 27);
+    color: white;
+}
+
+/* Stop button styling */
+#stop_button {
+    border: 1px solid rgb(236, 41, 11);
+    width: 80px;
+    border-radius: 15px;
+    color: rgb(236, 41, 11);
+}
+
+#stop_button:hover {
+    background-color: rgb(236, 41, 11);
+    color: white;
+}
+
+
+
+/* Reset button styling */
+#reset_button {
+    border: 1px solid rgb(35, 10, 197);
+    width: 80px;
+    border-radius: 15px;
+    color: rgb(35, 10, 197);
+}
+
+#reset_button:hover {
+    background-color: rgb(35, 10, 197);
+    color: white;
+}
+
+/* Animation for the timer text color change */
+@keyframes timerAnimation {
+    0% {
+        color: rgb(27, 221, 27); /* Initial color */
+    }
+    50% {
+        color: rgb(236, 41, 11); /* Midway color */
+    }
+    100% {
+        color: rgb(35, 10, 197); /* Final color */
+    }
+}
+
+/* Apply the color change animation */
+.timer-animation {
+    animation: timerAnimation 1s linear infinite alternate;
+}
+
+/* Media query for responsive design */
+@media screen and (max-width: 600px) {
+    .main_container {
+        font-size: 1rem;
+    }
+    .container {
+        height: 40vh;
+        width: 70vw;
+        min-width: 0px;
+    }
+    .tTex {
+        font-size: 1.5rem;
+    }
+    .btn {
+        font-size: 0.8rem;
+        width: 60px;
+    }
+}
