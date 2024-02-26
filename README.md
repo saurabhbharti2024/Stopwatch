@@ -27,8 +27,11 @@ Alternatively, you can [view the live demo here](https://saurabhbharti2024.githu
 
 stopwatch/
 │
+
 ├── index.html
+
 ├── styles.css
+
 └── script.js
 
 ## Credits
