@@ -29,9 +29,9 @@ stopwatch/
 
 ├── index.html
 
-├── styles.css
+├── stopwatch.css
 
-└── script.js
+└── stopwatch.js
 
 ## Credits
 
