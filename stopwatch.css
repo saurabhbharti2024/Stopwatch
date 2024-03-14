@@ -2,7 +2,7 @@
 .main_container {
     height: 100vh;
     width: 100vw;
-    background-color: rgb(225, 244, 20);
+    background-color: rgb(254, 134, 160);
     display: flex;
     align-items: center;
     flex-direction: column;
@@ -10,94 +10,59 @@
 
 /* Tagline styling */
 .tag {
-    font-size: 2rem;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 1.5rem;
     color: black;
-    margin-top: 40px;
+    margin-top: 10px;
+    display: flex;
 }
 
 /* Container styling for the stopwatch */
 .container {
-    height: 50vh;
-    width: 40vw;
-    min-height: 250px;
-    min-width: 500px;
-    background-color: rgb(146, 227, 237);
-    border: 4px solid rgb(221, 15, 15);
-    border-radius: 30px;
-    margin-top: 20px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: space-around;
+    height: 320px;
+    width: 320px;
+    background-color:#70f2e3;
+    border: 14px solid rgb(3, 3, 3);
+    border-radius: 50%;
+    position: relative;
+    box-shadow: 0 2vw 4vw -1vw rgba(0, 0, 0, 0.8);
 }
 
-/* Timer section styling */
-.timer {
-    height: 35%;
-    width: 80%;
-    background-color: rgb(242, 244, 238);
-    border: 2px solid black;
-    border-radius: 10px;
+/* Display area styling */
+.display {
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
 }
 
+/* Dial lines styling */
+.diallines {
+    z-index: 2;
+    width: 2px;
+    height: 15px;
+    background: #666;
+    left: 50%;
+    margin-top: 10px;
+    margin-left: -1px;
+    position: absolute;
+    transform-origin: 50% 150px;
+}
+
+/* Larger dial lines for every 5 minutes */
+.diallines:nth-of-type(5n) {
+    width: 4px;
+    height: 25px;
+}
+
 /* Timer text styling */
 .tTex {
-    font-size: 300%;
-    color: black;
-    padding: auto;
-}
-
-/* Button section styling */
-.button {
-    height: 15%;
-    width: 65%;
-    display: flex;
-    justify-content: space-around;
-    margin-top: -75px;
-}
-
-
-/* General button styling */
-.btn {
-    font-size: 1rem;
-    font-weight: bold;
-}
-
-/* start and Stop button styling */
-.button-running {
-    border: 1px solid rgb(236, 41, 11);
-    width: 80px;
-    border-radius: 15px;
-    color: rgb(236, 41, 11);
-}
-.button-running:hover{
-    background-color: rgb(236, 41, 11);
-    color: white;
-}
-.button-stopped {
-    border: 1px solid rgb(27, 221, 27);
-    width: 80px;
-    border-radius: 15px;
-    color: rgb(27, 221, 27);
-}
-.button-stopped:hover{
-    background-color: rgb(27, 221, 27);
-    color: white;
-}
-/* Reset button styling */
-#reset_button {
-    border: 1px solid rgb(35, 10, 197);
-    width: 80px;
-    border-radius: 15px;
-    color: rgb(35, 10, 197);
-}
-
-#reset_button:hover {
-    background-color: rgb(35, 10, 197);
-    color: white;
+    font-size: 2.2rem;
+    text-shadow: #666;
+    color: antiquewhite;
 }
 
 /* Animation for the timer text color change */
@@ -117,22 +82,39 @@
 .timer-animation {
     animation: timerAnimation 1s linear infinite alternate;
 }
+/* Styling for key */
+.key {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: -2px;
+  }
+  .fake{
+    height: 30px;
+    width: 60px;
+    background-color: black;
+}
 
-/* Media query for responsive design */
-@media screen and (max-width: 600px) {
-    .main_container {
-        font-size: 1rem;
-    }
-    .container {
-        height: 40vh;
-        width: 70vw;
-        min-width: 0px;
-    }
-    .tTex {
-        font-size: 1.5rem;
-    }
-    .btn {
-        font-size: 0.8rem;
-        width: 60px;
-    }
+/* Styling for start and stop buttons */
+.button-running,
+.button-stopped,
+#reset_button {
+    height: 40px;
+    width: 60px;
+    background-color: black;
+    color: whitesmoke;
+    border: 2px solid black;
+    border-radius: 15px 0px 0px 15px; /* Rounded corners on the left */
+}
+.button-stopped:hover,
+#reset_button:hover {
+    background-color: rgb(27, 221, 27); /* Green color on hover */
+}
+.button-running:hover {
+    background-color: rgb(236, 41, 11); /* Red color on hover */
+}
+
+/* Reset button styling */
+#reset_button {
+    border-radius: 0px 15px 15px 0px; /* Rounded corners on the right */
 }
